@@ -7,6 +7,9 @@ A collection of promotional HTML pages for the Galaxy Project, served via GitHub
 | Directory | Description | View |
 |-----------|-------------|------|
 | `what_is_galaxy/` | Interactive slideshow introducing Galaxy | [View](what_is_galaxy/) |
+| `what_is_brc/` | Interactive slideshow introducing BRC Analytics | [View](what_is_brc/) |
+
+**Front page:** https://nekrut.github.io/infographics/
 
 ## Generating Content
 
