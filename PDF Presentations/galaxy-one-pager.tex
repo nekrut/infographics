@@ -1,0 +1,190 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.5cm, a4paper]{geometry}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{graphicx}
+
+% Inter font
+\setmainfont{Inter}[
+  Path = ./,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  FontFace = {sb}{n}{*-SemiBold},
+  FontFace = {m}{n}{*-Medium},
+]
+\DeclareRobustCommand{\sbseries}{\fontseries{sb}\selectfont}
+\DeclareRobustCommand{\medseries}{\fontseries{m}\selectfont}
+
+% Colors from infographics site
+\definecolor{gradstart}{HTML}{1A1A2E}
+\definecolor{gradmid}{HTML}{16213E}
+\definecolor{gradend}{HTML}{0F3460}
+\definecolor{galaxydark}{HTML}{2C3143}
+\definecolor{galaxyorange}{HTML}{FE7F02}
+\definecolor{galaxyblue}{HTML}{2077B3}
+\definecolor{galaxygreen}{HTML}{74C376}
+\definecolor{subtlegray}{HTML}{F5F5F7}
+\definecolor{textgray}{HTML}{555555}
+
+\hypersetup{colorlinks=true, urlcolor=galaxyblue, linkcolor=galaxyblue}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+% Left-align text (no justify)
+\raggedright
+
+% Compact lists: dash label, tight left margin
+\let\olditemize\itemize
+\let\oldenditemize\enditemize
+\renewenvironment{itemize}{%
+  \olditemize
+  \setlength{\itemsep}{1pt}%
+  \setlength{\parskip}{0pt}%
+  \setlength{\parsep}{0pt}%
+  \setlength{\topsep}{2pt}%
+  \setlength{\leftmargin}{6pt}%
+  \renewcommand{\labelitemi}{--}%
+}{%
+  \oldenditemize
+}
+
+% Section command
+\newcommand{\sect}[1]{%
+  \vspace{8pt}%
+  {\color{galaxydark}\large\sbseries #1}\\[-2pt]%
+  {\color{galaxyorange}\rule{\linewidth}{1.5pt}}%
+  \vspace{4pt}%
+}
+
+% Stat box with color argument
+\newcommand{\statbox}[3]{%
+  \begin{tikzpicture}
+    \node[rounded corners=6pt, fill=#3, minimum width=2.8cm, minimum height=1.4cm, inner sep=4pt] {%
+      \begin{minipage}{2.6cm}\centering
+        {\color{white}\large\sbseries #1}\\[1pt]
+        {\scriptsize\color{white!85} #2}
+      \end{minipage}
+    };
+  \end{tikzpicture}%
+}
+
+\begin{document}
+
+% Header
+\begin{tikzpicture}[remember picture, overlay]
+  \shade[left color=gradstart, right color=gradend]
+    ([yshift=0pt]current page.north west) rectangle ([yshift=-2.0cm]current page.north east);
+  % Galaxy logo (white on dark)
+  \node[anchor=west, inner sep=0pt] at ([xshift=1.5cm, yshift=-1.0cm]current page.north west)
+    {\includegraphics[height=1.0cm]{galaxy-logo.png}};
+  % galaxyproject.org right side
+  \node[anchor=east, white, opacity=0.7, font=\small\medseries] at ([xshift=-1.5cm, yshift=-1.0cm]current page.north east) {galaxyproject.org};
+\end{tikzpicture}
+
+\vspace{1.4cm}
+
+% Stats row
+\begin{center}
+\statbox{400,000+}{registered users}{galaxyorange}\hfill
+\statbox{750,000}{jobs / month}{galaxyblue}\hfill
+\statbox{10,000+}{analysis tools}{galaxygreen}\hfill
+\statbox{22,000+}{citations}{galaxydark}\hfill
+\statbox{>\$2M/yr}{free compute}{galaxyorange}\hfill
+\statbox{3}{continents}{galaxyblue}
+\end{center}
+
+% Two-column body
+\begin{multicols}{2}
+
+\sect{Breadth of applications}
+Galaxy spans genomics, transcriptomics, proteomics, metabolomics, single cell, variant analysis, genome assembly, epigenetics, metagenomics, microbiome, machine learning, imaging, climate science, ecology, evolution, computational chemistry, materials science, synthetic biology, FAIR data, and One Health.
+
+\sect{Funding}
+Lab continuously funded since 2006 by NIH and NSF. Active grants:
+\begin{itemize}
+  \item \textbf{Galaxy} (U24HG006620) -- \$21.5M, NIH/NHGRI, 2012--2026
+  \item \textbf{AnVIL} (U24HG010263) -- \$19.2M, NIH/NHGRI, 2018--2028
+  \item \textbf{BRC-Analytics} (U24AI183870) -- \$3.3M, NIH/NIAID, 2024--2029
+  \item \textbf{Cancer Genomics} (U24CA284167) -- \$4.2M, NIH/NCI, 2024--2029
+  \item \textbf{Biodiversity/VGP} (2419522) -- \$3.0M, NSF, 2024--2028
+  \item \textbf{Phylogenetics} (R01GM151683) -- \$0.5M, NIH/NIGMS, 2024--2029
+\end{itemize}
+
+\sect{Tool ecosystem}
+\begin{tabularx}{\linewidth}{Xr}
+Galaxy tool wrappers & 10,676 \\
+BioConda packages & 11,699 \\
+BioContainers & 12,333 \\
+CondaForge packages & 30,722 \\
+\end{tabularx}
+
+\vspace{2pt}
+{\small\color{textgray} All free, open-source, and containerized for reproducibility.}
+
+\sect{Global infrastructure}
+The \textbf{usegalaxy.*} consortium provides free public servers:
+\begin{itemize}
+  \item \textbf{usegalaxy.org} -- USA (ACCESS-CI)
+  \item \textbf{usegalaxy.eu} -- Europe (de.NBI / ELIXIR)
+  \item \textbf{usegalaxy.org.au} -- Australia (BioCommons)
+\end{itemize}
+{\small\color{textgray} Every user: 250\,GB storage, 1\,TB scratch, 8 concurrent jobs -- free.}
+
+\columnbreak
+
+\sect{Galaxy Training Network}
+The world's largest open bioinformatics training resource:
+\begin{itemize}
+  \item \textbf{489 tutorials} across 35 topics
+  \item \textbf{214 training videos}, \textbf{499 contributors}
+  \item Galaxy Training Academy 2025: \textbf{3,700+ simultaneous participants}
+  \item Annual Galaxy Community Conference
+  \item Peer-reviewed, community-driven, free and open
+\end{itemize}
+
+\sect{Major international initiatives}
+\begin{itemize}
+  \item \textbf{AnVIL} -- NHGRI's genomic data science platform
+  \item \textbf{BRC Analytics} -- pathogen, host, and vector genomics
+  \item \textbf{CFDE} -- NIH Common Fund Data Ecosystem
+  \item \textbf{VGP} -- Vertebrate Genomes Project (600 assemblies)
+\end{itemize}
+
+\sect{The Galaxy ecosystem}
+{\small
+\begin{tabularx}{\linewidth}{lX}
+\textbf{IUC} & 10,676 community-curated tools \\
+\textbf{IWC} & 100s of curated, tested workflows \\
+\textbf{BioContainers} & 100,000+ containers \\
+\textbf{Planemo} & Tool development SDK \\
+\textbf{Pulsar} & Distributed job execution \\
+\textbf{TPV} & Intelligent job routing \\
+\end{tabularx}}
+
+\sect{Links}
+\begin{multicols}{2}
+{\small
+\url{galaxyproject.org}\\
+\url{usegalaxy.org}\\
+\url{training.galaxyproject.org}\\
+\url{github.com/galaxyproject}
+
+\columnbreak
+
+\url{usegalaxy.eu}\\
+\url{usegalaxy.org.au}\\
+\url{brc-analytics.org}\\
+\url{iwc.galaxyproject.org}
+}
+\end{multicols}
+
+\end{multicols}
+
+\end{document}

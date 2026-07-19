@@ -1,0 +1,245 @@
+---
+title: "Galaxy"
+subtitle: "Open, web-based platform for accessible, reproducible, and transparent computational research"
+author: "galaxyproject.org"
+format:
+  beamer:
+    theme: default
+    fonttheme: professionalfonts
+    colortheme: default
+    aspectratio: 169
+    fontsize: 12pt
+    header-includes: |
+      \definecolor{galaxydark}{HTML}{2C3143}
+      \definecolor{galaxyorange}{HTML}{FE7F02}
+      \definecolor{galaxyblue}{HTML}{2077B3}
+      \setbeamercolor{frametitle}{bg=galaxydark, fg=white}
+      \setbeamercolor{alerted text}{fg=galaxyorange}
+      \setbeamercolor{title}{fg=galaxydark}
+      \setbeamercolor{subtitle}{fg=galaxyorange}
+      \setbeamercolor{structure}{fg=galaxydark}
+      \setbeamercolor{palette primary}{bg=galaxydark, fg=white}
+      \setbeamertemplate{navigation symbols}{}
+      \usepackage{booktabs}
+---
+
+## Galaxy at a glance
+
+\begin{columns}[T]
+\begin{column}{0.3\textwidth}
+\centering
+{\Large\bfseries\color{galaxyorange} 400,000+}\\
+registered users
+
+\vspace{1em}
+
+{\Large\bfseries\color{galaxyorange} 750,000}\\
+jobs per month
+\end{column}
+\begin{column}{0.3\textwidth}
+\centering
+{\Large\bfseries\color{galaxyblue} 10,000+}\\
+analysis tools
+
+\vspace{1em}
+
+{\Large\bfseries\color{galaxyblue} 22,000+}\\
+citations
+\end{column}
+\begin{column}{0.3\textwidth}
+\centering
+{\Large\bfseries\color{galaxydark} >\$2M/year}\\
+free compute
+
+\vspace{1em}
+
+{\Large\bfseries\color{galaxydark} 3 continents}\\
+public servers
+\end{column}
+\end{columns}
+
+## From genomics to climate science
+
+\begin{columns}[T]
+\begin{column}{0.24\textwidth}
+\begin{itemize}
+\item Genomics
+\item Transcriptomics
+\item Proteomics
+\item Metabolomics
+\item Single Cell
+\end{itemize}
+\end{column}
+\begin{column}{0.24\textwidth}
+\begin{itemize}
+\item Variant Analysis
+\item Genome Assembly
+\item Epigenetics
+\item Metagenomics
+\item Microbiome
+\end{itemize}
+\end{column}
+\begin{column}{0.24\textwidth}
+\begin{itemize}
+\item Machine Learning
+\item Imaging
+\item Climate Science
+\item Ecology
+\item Evolution
+\end{itemize}
+\end{column}
+\begin{column}{0.24\textwidth}
+\begin{itemize}
+\item Comp. Chemistry
+\item Materials Science
+\item Synthetic Biology
+\item FAIR Data
+\item One Health
+\end{itemize}
+\end{column}
+\end{columns}
+
+## No programming required
+
+Galaxy provides a \alert{point-and-click web interface} for complex analyses:
+
+1. **Upload data** -- from your computer, SRA, or the web
+2. **Run a tool** -- select from thousands of analysis tools
+3. **Run a workflow** -- use community-curated, tested workflows
+4. **Interpret results** -- integrated Jupyter, RStudio, and visualization tools
+
+\vspace{1em}
+
+Every analysis is \alert{automatically tracked} -- full provenance and reproducibility built in.
+
+## A massive tool ecosystem
+
+Galaxy integrates tightly with the open-source bioinformatics community:
+
+\begin{table}
+\centering
+\begin{tabular}{lr}
+\toprule
+\textbf{Resource} & \textbf{Count} \\
+\midrule
+Galaxy tool wrappers & 10,676 \\
+BioConda packages & 11,699 \\
+BioContainers & 12,333 \\
+CondaForge packages & 30,722 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All tools are \alert{free, open-source}, and containerized for reproducibility.
+
+## Truly global infrastructure
+
+The **usegalaxy.\*** consortium provides free public servers across three continents:
+
+- **usegalaxy.org** -- United States (ACCESS-CI powered)
+- **usegalaxy.eu** -- Europe (de.NBI / ELIXIR)
+- **usegalaxy.org.au** -- Australia (Australian BioCommons)
+
+\vspace{1em}
+
+Every user gets \alert{250 GB permanent storage}, 1 TB scratch space, and 8 concurrent job slots -- at no cost.
+
+## Galaxy Training Network (GTN)
+
+The world's largest open bioinformatics training resource:
+
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\begin{itemize}
+\item \textbf{489 tutorials} across 35 topics
+\item \textbf{214 training videos}
+\item \textbf{499 contributors} worldwide
+\item Peer-reviewed, community-driven
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{itemize}
+\item Galaxy Training Academy 2025:\\ \textbf{3,700+ simultaneous participants}
+\item Annual Galaxy Community Conference
+\item Free and open to all
+\end{itemize}
+\end{column}
+\end{columns}
+
+## Part of major international initiatives
+
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{\color{galaxyorange} AnVIL}\\
+NHGRI's Analysis, Visualization, and Informatics Lab-Space for genomic data science
+
+\vspace{1em}
+
+\textbf{\color{galaxyorange} BRC Analytics}\\
+Bioinformatics Resource Center for pathogen, host, and vector genomics
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{\color{galaxyorange} CFDE}\\
+NIH Common Fund Data Ecosystem -- cloud workspace for protected datasets
+
+\vspace{1em}
+
+\textbf{\color{galaxyorange} VGP}\\
+Vertebrate Genomes Project -- 600 chromosome-level assemblies and counting
+\end{column}
+\end{columns}
+
+## VGP: a Galaxy success story
+
+The Vertebrate Genomes Project uses Galaxy to produce near error-free, chromosome-level genomes:
+
+- **600 assemblies** completed on Galaxy / Jetstream2
+- Goal: reference genomes for all **\textasciitilde 70,000** known vertebrate species
+- Fully reproducible workflows available to the community
+
+\vspace{1em}
+
+\begin{quote}
+``95\% of the main discoveries that have driven biotechnology came from studying things that were not model organisms at the time.''
+
+\hfill -- Giulio Formenti, Rockefeller University
+\end{quote}
+
+## The Galaxy ecosystem
+
+\begin{table}
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Component} & \textbf{Role} \\
+\midrule
+IUC & Community-driven tool curation \\
+IWC & Curated, tested workflow publishing \\
+BioContainers & 100,000+ reproducibility containers \\
+Planemo & Tool development SDK \\
+Pulsar & Distributed job execution (HPC to cloud) \\
+TPV & Dynamic, intelligent job routing \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+## Learn more
+
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\begin{itemize}
+\item \url{galaxyproject.org}
+\item \url{usegalaxy.org}
+\item \url{training.galaxyproject.org}
+\item \url{github.com/galaxyproject}
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{itemize}
+\item \url{usegalaxy.eu}
+\item \url{usegalaxy.org.au}
+\item \url{brc-analytics.org}
+\item \url{iwc.galaxyproject.org}
+\end{itemize}
+\end{column}
+\end{columns}
