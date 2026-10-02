@@ -14,6 +14,7 @@ A collection of promotional HTML pages for the Galaxy Project, served via GitHub
 | `what_is_brc/` | Interactive slideshow introducing BRC Analytics (12 slides) | [View](what_is_brc/) |
 | `vgp/` | VGP on Galaxy - Vertebrate Genomes Project (9 slides) | [View](vgp/) |
 | `pag33/` | Galaxy Workshop at PAG33 - Introduction to Galaxy (21 slides) | [View](pag33/) |
+| `asmbig26/` | Galaxy for the microbial sciences - ASM BIG 2026 booth (20 slides) | [View](asmbig26/) |
 
 ## Generating Content
 
@@ -64,7 +65,10 @@ The infographics-generator framework:
     ├── vgp/
     │   ├── slides.md
     │   └── images/
-    └── pag33/
+    ├── pag33/
+    │   ├── slides.md
+    │   └── images/
+    └── asmbig26/
         ├── slides.md
         └── images/
 ```
